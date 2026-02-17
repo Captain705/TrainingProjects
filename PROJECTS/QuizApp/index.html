@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Brain Challenge - Futuristic Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Role Selection Screen -->
+        <div id="role-selection" class="screen active">
+            <div class="glass-card hero-card">
+                <div class="ai-brain-icon">
+                    <div class="brain-core"></div>
+                    <div class="brain-ring ring-1"></div>
+                    <div class="brain-ring ring-2"></div>
+                    <div class="brain-ring ring-3"></div>
+                </div>
+                <h1 class="main-title">AI BRAIN <span class="highlight">CHALLENGE</span></h1>
+                <p class="subtitle">Futuristic Quiz Experience</p>
+                
+                <div class="role-buttons">
+                    <button class="btn btn-host" onclick="showHostLogin()">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">Login as Host</span>
+                        <span class="btn-subtext">Create Quiz</span>
+                    </button>
+                    <button class="btn btn-user" onclick="showUserLogin()">
+                        <span class="btn-icon">🎯</span>
+                        <span class="btn-text">Login as User</span>
+                        <span class="btn-subtext">Play Quiz</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Host Login Screen -->
+        <div id="host-login" class="screen">
+            <div class="glass-card login-card">
+                <button class="back-btn" onclick="showRoleSelection()">← Back</button>
+                <h2 class="screen-title">Host <span class="highlight">Login</span></h2>
+                <div class="form-group">
+                    <label for="host-name">Enter Your Name</label>
+                    <input type="text" id="host-name" placeholder="Host Name" maxlength="20">
+                </div>
+                <button class="btn btn-primary" onclick="loginAsHost()">Continue</button>
+            </div>
+        </div>
+
+        <!-- Host Dashboard -->
+        <div id="host-dashboard" class="screen">
+            <div class="glass-card dashboard-card">
+                <div class="dashboard-header">
+                    <h2>Welcome, <span id="host-display-name" class="highlight"></span></h2>
+                    <button class="btn btn-small" onclick="showRoleSelection()">Logout</button>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <button class="btn btn-create" onclick="showQuizCreation()">
+                        <span class="btn-icon">➕</span>
+                        Create New Quiz
+                    </button>
+                </div>
+
+                <div class="my-quizzes-section">
+                    <h3>My Quizzes</h3>
+                    <div id="host-quizzes-list" class="quizzes-list">
+                        <p class="empty-message">No quizzes created yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Creation Screen -->
+        <div id="quiz-creation" class="screen">
+            <div class="glass-card creation-card">
+                <button class="back-btn" onclick="showHostDashboard()">← Back to Dashboard</button>
+                <h2 class="screen-title">Create <span class="highlight">Quiz</span></h2>
+                
+                <div class="form-group">
+                    <label for="quiz-title">Quiz Title</label>
+                    <input type="text" id="quiz-title" placeholder="Enter Quiz Title" maxlength="50">
+                </div>
+
+                <div class="questions-container" id="questions-container">
+                    <!-- Questions will be added here -->
+                </div>
+
+                <button class="btn btn-secondary" onclick="addQuestion()">
+                    <span class="btn-icon">➕</span> Add Question
+                </button>
+
+                <div class="creation-actions">
+                    <button class="btn btn-primary btn-large" onclick="createQuiz()">Create Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Code Display -->
+        <div id="quiz-code-display" class="screen">
+            <div class="glass-card code-card">
+                <div class="success-icon">✓</div>
+                <h2 class="screen-title">Quiz <span class="highlight">Created!</span></h2>
+                <p class="code-label">Share this code with players:</p>
+                <div class="quiz-code-box">
+                    <span id="generated-quiz-code">AI1234</span>
+                </div>
+                <p class="code-instruction">Players can join using this code</p>
+                <div class="code-actions">
+                    <button class="btn btn-primary" onclick="copyQuizCode()">Copy Code</button>
+                    <button class="btn btn-secondary" onclick="showHostDashboard()">Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Login Screen -->
+        <div id="user-login" class="screen">
+            <div class="glass-card login-card">
+                <button class="back-btn" onclick="showRoleSelection()">← Back</button>
+                <h2 class="screen-title">Player <span class="highlight">Login</span></h2>
+                <div class="form-group">
+                    <label for="player-name">Enter Your Name</label>
+                    <input type="text" id="player-name" placeholder="Player Name" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="quiz-code-input">Enter Quiz Code</label>
+                    <input type="text" id="quiz-code-input" placeholder="Quiz Code (e.g., AI1234)" maxlength="10">
+                </div>
+                <button class="btn btn-primary" onclick="joinQuiz()">Join Quiz</button>
+                <p id="join-error" class="error-message"></p>
+            </div>
+        </div>
+
+        <!-- Quiz Game Screen -->
+        <div id="quiz-game" class="screen">
+            <div class="game-header">
+                <div class="player-info">
+                    <span class="player-label">Player:</span>
+                    <span id="game-player-name" class="highlight"></span>
+                </div>
+                <div class="question-counter">
+                    Question <span id="current-question-num">1</span> / <span id="total-questions">10</span>
+                </div>
+            </div>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="game-progress-bar"></div>
+            </div>
+
+            <div class="glass-card game-card">
+                <div class="timer-container">
+                    <div class="timer-ring">
+                        <svg class="timer-svg" viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                            <circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45"></circle>
+                        </svg>
+                        <div class="timer-text" id="timer-text">30</div>
+                    </div>
+                </div>
+
+                <h3 id="question-text" class="question-text">Question goes here?</h3>
+
+                <div class="options-container" id="options-container">
+                    <!-- Options will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="glass-card results-card">
+                <div class="results-icon">🏆</div>
+                <h2 class="screen-title">Quiz <span class="highlight">Complete!</span></h2>
+                
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-total">/ 100</span>
+                    </div>
+                </div>
+
+                <div class="intelligence-level">
+                    <p>Your Intelligence Level:</p>
+                    <h3 id="intelligence-label" class="highlight">Beginner Mind</h3>
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="showLeaderboard()">View Leaderboard</button>
+                    <button class="btn btn-secondary" onclick="showRoleSelection()">Back to Home</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboard-screen" class="screen">
+            <div class="glass-card leaderboard-card">
+                <button class="back-btn" onclick="goBackFromLeaderboard()">← Back</button>
+                <h2 class="screen-title">Leaderboard</h2>
+                <p id="leaderboard-quiz-code" class="leaderboard-subtitle"></p>
+                
+                <div class="leaderboard-list" id="leaderboard-list">
+                    <!-- Leaderboard entries will be generated here -->
+                </div>
+
+                <button class="btn btn-primary" onclick="showRoleSelection()">Back to Home</button>
+            </div>
+        </div>
+
+        <!-- Host: View Quiz Details -->
+        <div id="quiz-details" class="screen">
+            <div class="glass-card details-card">
+                <button class="back-btn" onclick="showHostDashboard()">← Back</button>
+                <h2 id="detail-quiz-title" class="screen-title">Quiz Details</h2>
+                <p id="detail-quiz-code" class="quiz-code-display"></p>
+                
+                <div class="detail-stats">
+                    <div class="stat-box">
+                        <span class="stat-value" id="detail-questions-count">0</span>
+                        <span class="stat-label">Questions</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="detail-players-count">0</span>
+                        <span class="stat-label">Players</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="showQuizDetailsLeaderboard()">View Leaderboard</button>
+                <button class="btn btn-danger" onclick="deleteQuiz()">Delete Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
