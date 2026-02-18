@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 20px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.display-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    min-height: 24px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.mode-toggle {
+    margin-bottom: 15px;
+}
+
+.mode-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mode-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn.number {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn.number:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.btn.operator {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    font-weight: 600;
+}
+
+.btn.operator:hover {
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+.btn.function {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.btn.function:hover {
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.btn.equals {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.btn.equals:hover {
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+}
+
+.btn.clear {
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    font-weight: 600;
+}
+
+.btn.clear:hover {
+    box-shadow: 0 5px 15px rgba(235, 51, 73, 0.4);
+}
+
+.btn.delete {
+    background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+.btn.delete:hover {
+    box-shadow: 0 5px 15px rgba(242, 153, 74, 0.4);
+}
+
+.btn.decimal {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.keyboard-hint {
+    margin-top: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+}
+
+/* Simple mode - hide scientific functions */
+.buttons .function {
+    display: none;
+}
+
+.buttons.simple-mode .function {
+    display: none;
+}
+
+.buttons.advanced-mode .function {
+    display: block;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .display-container {
+        padding: 15px;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+    
+    .buttons {
+        gap: 8px;
+    }
+    
+    .btn {
+        padding: 12px 8px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    
+    .btn.function {
+        font-size: 0.85rem;
+        padding: 10px 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .btn.equals {
+        grid-column: span 4;
+    }
+}
+
+/* Animation for button press */
+@keyframes press {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.btn.pressed {
+    animation: press 0.1s ease;
+}

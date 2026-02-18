@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Productivity App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-tomato"></i>
+                <span>PomoFlow</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Timer Section -->
+            <section class="timer-section">
+                <div class="timer-card">
+                    <!-- Mode Selector -->
+                    <div class="mode-selector">
+                        <button class="mode-btn active" data-mode="focus">
+                            <i class="fas fa-brain"></i>
+                            Focus
+                        </button>
+                        <button class="mode-btn" data-mode="shortBreak">
+                            <i class="fas fa-coffee"></i>
+                            Short Break
+                        </button>
+                        <button class="mode-btn" data-mode="longBreak">
+                            <i class="fas fa-bed"></i>
+                            Long Break
+                        </button>
+                    </div>
+
+                    <!-- Circular Timer -->
+                    <div class="timer-container">
+                        <svg class="timer-ring" viewBox="0 0 200 200">
+                            <circle class="timer-ring-bg" cx="100" cy="100" r="90" />
+                            <circle class="timer-ring-progress" cx="100" cy="100" r="90" id="progressRing" />
+                        </svg>
+                        <div class="timer-display">
+                            <span class="time" id="timerDisplay">25:00</span>
+                            <span class="mode-label" id="modeLabel">Focus Time</span>
+                        </div>
+                    </div>
+
+                    <!-- Control Buttons -->
+                    <div class="timer-controls">
+                        <button class="control-btn primary" id="startBtn">
+                            <i class="fas fa-play"></i>
+                            Start
+                        </button>
+                        <button class="control-btn secondary" id="resetBtn">
+                            <i class="fas fa-redo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Card -->
+                <div class="stats-card">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="sessionCount">0</span>
+                            <span class="stat-label">Sessions Today</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="streakCount">0</span>
+                            <span class="stat-label">Current Streak</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote Card -->
+                <div class="quote-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p id="quoteText">The secret of getting ahead is getting started.</p>
+                    <span id="quoteAuthor">- Mark Twain</span>
+                </div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="tasks-section">
+                <div class="tasks-card">
+                    <div class="tasks-header">
+                        <h2><i class="fas fa-tasks"></i> Tasks</h2>
+                        <span class="task-count" id="taskCount">0</span>
+                    </div>
+                    
+                    <!-- Add Task Input -->
+                    <div class="add-task">
+                        <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="100">
+                        <button id="addTaskBtn" aria-label="Add task">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Task List -->
+                    <ul class="task-list" id="taskList">
+                        <!-- Tasks will be added here dynamically -->
+                    </ul>
+
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>No tasks yet. Add one to get started!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Stay focused. Stay productive. 💪</p>
+        </footer>
+    </div>
+
+    <!-- Notification Modal -->
+    <div class="modal" id="notificationModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+            <h3>Time's Up!</h3>
+            <p id="notificationMessage">Great job! Take a break.</p>
+            <button class="modal-btn" id="closeModal">Got it!</button>
+        </div>
+    </div>
+
+    <!-- Audio Element for Notification -->
+    <audio id="notificationSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

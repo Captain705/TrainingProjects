@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploader - Drag & Drop</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>File Uploader</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Area -->
+            <div class="upload-section">
+                <div class="upload-container">
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" id="fileInput" hidden multiple accept="image/*">
+                        <div class="drop-zone-content">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h2>Drag & Drop files here</h2>
+                            <p>or</p>
+                            <button class="browse-btn" id="browseBtn">Browse Files</button>
+                            <p class="file-limit">Maximum file size: 5MB (Images only)</p>
+                        </div>
+                        <div class="drop-zone-overlay">
+                            <i class="fas fa-file-import"></i>
+                            <span>Drop files here</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions Bar -->
+                <div class="actions-bar" id="actionsBar">
+                    <span class="file-count" id="fileCount">No files selected</span>
+                    <button class="clear-all-btn" id="clearAllBtn">
+                        <i class="fas fa-trash-alt"></i> Clear All
+                    </button>
+                </div>
+
+                <!-- Error Messages -->
+                <div class="error-container" id="errorContainer"></div>
+
+                <!-- File List -->
+                <div class="file-list" id="fileList"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 File Uploader. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img src="" alt="Preview" id="modalImage">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

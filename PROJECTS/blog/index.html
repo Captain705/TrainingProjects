@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBlog - Modern Tech Blog</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showHome()">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                <span class="logo-text">DevBlog</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active" onclick="showHome()">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#categories" class="nav-link" onclick="showCategories()">
+                    <i class="fas fa-folder"></i> Categories
+                </a>
+                <a href="#about" class="nav-link" onclick="showAbout()">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <a href="#contact" class="nav-link" onclick="showContact()">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" onclick="toggleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-btn" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar" id="searchBar">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search articles..." oninput="searchPosts(this.value)">
+                <button class="close-search" onclick="toggleSearch()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to <span class="highlight">DevBlog</span></h1>
+                <p class="hero-subtitle">Discover the latest in web development, programming, and technology</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalPosts">0</span>
+                        <span class="stat-label">Articles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="totalCategories">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Readers</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-decoration">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="category-section">
+            <div class="container">
+                <div class="category-filters" id="categoryFilters">
+                    <button class="category-btn active" data-category="all" onclick="filterByCategory('all')">
+                        All Posts
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Articles</h2>
+                    <p class="section-subtitle">Explore our collection of informative articles</p>
+                </div>
+                <div class="posts-grid" id="postsGrid">
+                    <!-- Posts will be loaded here dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Post Detail View -->
+        <section class="post-detail" id="postDetail" style="display: none;">
+            <div class="container">
+                <button class="back-btn" onclick="showHome()">
+                    <i class="fas fa-arrow-left"></i> Back to Posts
+                </button>
+                <article class="full-post" id="fullPost">
+                    <!-- Full post content will be loaded here -->
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about" style="display: none;">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">About DevBlog</h2>
+                    <p class="about-text">
+                        DevBlog is your go-to source for the latest in web development, programming, and technology. 
+                        We believe in sharing knowledge and helping developers grow their skills through high-quality, 
+                        informative content.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Quality Content</h3>
+                            <p>Well-researched articles written by experienced developers</p>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-users"></i>
+                            <h3>Community</h3>
+                            <p>Join thousands of developers learning and growing together</p>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Latest Tech</h3>
+                            <p>Stay updated with the newest trends and technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact" style="display: none;">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="contact-text">Have questions or suggestions? We'd love to hear from you!</p>
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Recent Posts</h3>
+            <div class="recent-posts" id="recentPosts">
+                <!-- Recent posts will be loaded here -->
+            </div>
+        </div>
+        
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Popular Tags</h3>
+            <div class="tags-cloud" id="tagsCloud">
+                <!-- Tags will be loaded here -->
+            </div>
+        </div>
+        
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Newsletter</h3>
+            <p class="newsletter-text">Subscribe to get the latest articles delivered to your inbox.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">DevBlog</h3>
+                <p class="footer-text">Your trusted source for web development content.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showHome()">Home</a></li>
+                    <li><a href="#categories" onclick="showCategories()">Categories</a></li>
+                    <li><a href="#about" onclick="showAbout()">About</a></li>
+                    <li><a href="#contact" onclick="showContact()">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Categories</h3>
+                <ul class="footer-links" id="footerCategories">
+                    <!-- Categories will be loaded here -->
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DevBlog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Message</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

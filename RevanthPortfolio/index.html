@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revanth Portfolio | Full Stack Developer & Cloud Enthusiast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="bg-gradient"></div>
+        <div class="bg-grid"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Revanth</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for internships</span>
+                </div>
+                <h1 class="hero-title">
+                    Hello, I'm <span class="gradient-text">Revanth Reddy</span>
+                </h1>
+                <div class="hero-typing">
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-tagline">
+                    Building scalable web applications and cloud-powered solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span class="btn-icon">🚀</span>
+                        View Projects
+                    </a>
+                    <a href="#resume" class="btn btn-secondary">
+                        <span class="btn-icon">📄</span>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span class="btn-icon">✉️</span>
+                        Contact Me
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="12">0</span>
+                        <span class="stat-label">Skills</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-container">
+                    <div class="profile-glow"></div>
+                    <div class="profile-frame">
+                        <div class="profile-image">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Revanth&backgroundColor=1a1a2e" alt="Revanth Reddy">
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <span>☁️</span> AWS Cloud
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <span>⚡</span> Full Stack
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Get to know me</h2>
+                <p class="section-subtitle">Computer Science undergraduate passionate about building scalable applications</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4>B.Tech Computer Science</h4>
+                        <p class="institution">Madanapalle Institute of Technology & Science</p>
+                        <p class="duration">2023 – 2027</p>
+                        <p class="cgpa">CGPA: 8.57</p>
+                    </div>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Career Objective</h3>
+                    <p class="objective-text">
+                        Aspiring Full Stack Developer and Cloud Engineer passionate about building scalable applications and solving real-world problems. Eager to contribute to innovative projects and grow in a dynamic tech environment.
+                    </p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">💡</div>
+                    <h3>What I Do</h3>
+                    <ul class="interest-list">
+                        <li>🌐 Web Development</li>
+                        <li>☁️ Cloud Computing</li>
+                        <li>📱 Full Stack Development</li>
+                        <li>🔧 Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Skills</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">💻</span>
+                        Languages
+                    </h3>
+                    <div class="skill-cards">
+                        <div class="skill-card glass-card" data-skill="85">
+                            <div class="skill-icon">🐍</div>
+                            <span class="skill-name">Python</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="75">
+                            <div class="skill-icon">☕</div>
+                            <span class="skill-name">Java</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="70">
+                            <div class="skill-icon">⚡</div>
+                            <span class="skill-name">C</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="80">
+                            <div class="skill-icon">🗄️</div>
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">🌐</span>
+                        Web Technologies
+                    </h3>
+                    <div class="skill-cards">
+                        <div class="skill-card glass-card" data-skill="90">
+                            <div class="skill-icon">📄</div>
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="85">
+                            <div class="skill-icon">🎨</div>
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="80">
+                            <div class="skill-icon">⚡</div>
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="75">
+                            <div class="skill-icon">🧪</div>
+                            <span class="skill-name">Flask</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <span class="category-icon">🛠️</span>
+                        Tools & Platforms
+                    </h3>
+                    <div class="skill-cards">
+                        <div class="skill-card glass-card" data-skill="85">
+                            <div class="skill-icon">🐙</div>
+                            <span class="skill-name">GitHub</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="90">
+                            <div class="skill-icon">💙</div>
+                            <span class="skill-name">VS Code</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card glass-card" data-skill="70">
+                            <div class="skill-icon">☁️</div>
+                            <span class="skill-name">AWS Cloud</span>
+                            <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Projects</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my technical implementations</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span class="placeholder-icon">🛒</span>
+                            <span>Flask E-Commerce</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Flask-Based Cart System with Email Integration</h3>
+                        <p class="project-description">
+                            Built an e-commerce system using Flask and Python with cart management, checkout functionality, and SMTP email notifications. Features a student buy-and-sell platform.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">SMTP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <span>View Code</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Certifications</span>
+                <h2 class="section-title">Professional Certifications</h2>
+                <p class="section-subtitle">Continuous learning and skill validation</p>
+            </div>
+            <div class="certifications-timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="cert-title">AWS Cloud Quest Cloud Practitioner</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-description">Hands-on cloud computing fundamentals and practical AWS services implementation</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="cert-title">Full Stack Web Development Internship</h3>
+                        <p class="cert-issuer">Tech Company</p>
+                        <p class="cert-description">Completed intensive internship program covering front-end and back-end development</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="cert-title">Infosys Front End Web Developer Certification</h3>
+                        <p class="cert-issuer">Infosys</p>
+                        <p class="cert-description">Certified in modern front-end web development technologies and best practices</p>
+                    </div>
+                </div>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="cert-title">Deloitte Data Analysis Simulation</h3>
+                        <p class="cert-issuer">Deloitte</p>
+                        <p class="cert-description">Completed data analysis simulation with real-world business scenarios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Achievements</span>
+                <h2 class="section-title">Recognition & Activities</h2>
+                <p class="section-subtitle">Milestones and accomplishments</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card glass-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>1st Place - Movie Mania</h3>
+                    <p>Won the competition twice (twice winner)</p>
+                    <span class="achievement-tag">Winner</span>
+                </div>
+                <div class="achievement-card glass-card">
+                    <div class="achievement-icon">🏏</div>
+                    <h3>College Cricket Representative</h3>
+                    <p>Represented college in inter-college cricket tournaments</p>
+                    <span class="achievement-tag">Sports</span>
+                </div>
+                <div class="achievement-card glass-card">
+                    <div class="achievement-icon">🔍</div>
+                    <h3>Treasure Hunt Participant</h3>
+                    <p>Active participant in college treasure hunt events</p>
+                    <span class="achievement-tag">Event</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Analytics</span>
+                <h2 class="section-title">Developer Dashboard</h2>
+                <p class="section-subtitle">Real-time skill progression and project metrics</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card glass-card">
+                    <div class="dashboard-header">
+                        <h3>Skills Progress</h3>
+                        <span class="dashboard-icon">📊</span>
+                    </div>
+                    <div class="dashboard-chart">
+                        <div class="progress-ring">
+                            <svg viewBox="0 0 100 100">
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#00d4ff" />
+                                        <stop offset="100%" style="stop-color:#7b2cbf" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="progress-fill" cx="50" cy="50" r="45" style="--progress: 0.8"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="big-number">80%</span>
+                                <span class="small-text">Overall</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="dash-stat">
+                            <span class="dash-stat-value">12</span>
+                            <span class="dash-stat-label">Skills</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-value">4</span>
+                            <span class="dash-stat-label">Categories</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card glass-card">
+                    <div class="dashboard-header">
+                        <h3>Project Completion</h3>
+                        <span class="dashboard-icon">🚀</span>
+                    </div>
+                    <div class="dashboard-chart">
+                        <div class="progress-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="progress-fill" cx="50" cy="50" r="45" style="--progress: 0.6"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="big-number">60%</span>
+                                <span class="small-text">Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="dash-stat">
+                            <span class="dash-stat-value">5</span>
+                            <span class="dash-stat-label">Projects</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-value">3</span>
+                            <span class="dash-stat-label">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card glass-card">
+                    <div class="dashboard-header">
+                        <h3>Cloud Learning</h3>
+                        <span class="dashboard-icon">☁️</span>
+                    </div>
+                    <div class="dashboard-chart">
+                        <div class="progress-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="progress-fill" cx="50" cy="50" r="45" style="--progress: 0.7"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="big-number">70%</span>
+                                <span class="small-text">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="dash-stat">
+                            <span class="dash-stat-value">1</span>
+                            <span class="dash-stat-label">Certified</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-value">3</span>
+                            <span class="dash-stat-label">Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Resume</span>
+                <h2 class="section-title">My Resume</h2>
+                <p class="section-subtitle">Download to know more about my journey</p>
+            </div>
+            <div class="resume-preview glass-card">
+                <div class="resume-preview-content">
+                    <div class="resume-header-section">
+                        <h3>Revanth Reddy</h3>
+                        <p class="resume-role">Computer Science Student | Full Stack Developer | Cloud Enthusiast</p>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Education</h4>
+                        <p><strong>B.Tech Computer Science</strong></p>
+                        <p>Madanapalle Institute of Technology & Science (2023-2027)</p>
+                        <p>CGPA: 8.57</p>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Key Skills</h4>
+                        <p>Python, Java, C, MySQL, HTML, CSS, JavaScript, Flask, GitHub, AWS Cloud</p>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Projects</h4>
+                        <p>Flask-Based Cart System with Email Integration</p>
+                    </div>
+                </div>
+                <div class="resume-download">
+                    <button class="btn btn-primary btn-lg">
+                        <span class="btn-icon">📥</span>
+                        Download Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's connect and collaborate</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info glass-card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:revanthreddymutra@gmail.com">revanthreddymutra@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:+917207652025">+91 7207652025</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/mutrarevanthreddy" target="_blank">linkedin.com/in/mutrarevanthreddy</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🐙</span>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/REVANTHREDDY-crypto" target="_blank">github.com/REVANTHREDDY-crypto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper glass-card">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <span class="btn-icon">✉️</span>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚡</span>
+                    <span>Revanth Portfolio</span>
+                </div>
+                <p class="footer-text">© 2024 Revanth Reddy. Built with 💜 and lots of ☕</p>
+                <div class="footer-social">
+                    <a href="https://github.com/revanthreddy" target="_blank" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/revanthreddy" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

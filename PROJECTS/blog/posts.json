@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with Modern Web Development",
+    "author": "Revanth",
+    "date": "2026-02-17",
+    "category": "Web Development",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+    "content": "Web development has evolved significantly over the years. Today, we have powerful tools and frameworks that make building web applications easier than ever. In this comprehensive guide, we'll explore the fundamentals of modern web development and discuss the latest trends and best practices that every developer should know.\n\nWhether you're just starting your journey in web development or you're looking to upgrade your skills, this guide will provide you with valuable insights into the world of modern web development. We'll cover everything from HTML5 and CSS3 to JavaScript frameworks and beyond.\n\nThe landscape of web development is constantly changing, and it's crucial to stay updated with the latest technologies. From responsive design to progressive web apps, there are many exciting developments that are shaping the future of the web.",
+    "excerpt": "Discover the fundamentals of modern web development and learn about the latest trends and best practices that every developer should know.",
+    "tags": ["Web Development", "HTML", "CSS", "JavaScript"],
+    "readTime": "5 min read"
+  },
+  {
+    "id": 2,
+    "title": "Mastering CSS Grid and Flexbox",
+    "author": "Revanth",
+    "date": "2026-02-15",
+    "category": "CSS",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    "content": "CSS Grid and Flexbox are powerful layout systems that have revolutionized how we build web layouts. While Flexbox is great for one-dimensional layouts, CSS Grid excels at creating complex two-dimensional layouts. In this tutorial, we'll dive deep into both technologies and learn how to use them effectively.\n\nUnderstanding when to use Grid vs Flexbox is crucial for building responsive and maintainable layouts. We'll explore real-world examples and best practices that will help you become more proficient in CSS layout techniques.\n\nBy the end of this guide, you'll have a solid understanding of both CSS Grid and Flexbox, and you'll be able to choose the right layout system for any project.",
+    "excerpt": "Learn how to create stunning responsive layouts using CSS Grid and Flexbox with practical examples and best practices.",
+    "tags": ["CSS", "Grid", "Flexbox", "Layout"],
+    "readTime": "7 min read"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript ES6+ Features You Should Know",
+    "author": "Revanth",
+    "date": "2026-02-13",
+    "category": "JavaScript",
+    "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&q=80",
+    "content": "JavaScript has come a long way since its early days. With ES6 and subsequent versions, the language has evolved dramatically, introducing features that make code more readable, maintainable, and powerful. In this article, we'll explore the most important ES6+ features that every JavaScript developer should know.\n\nFrom arrow functions and destructuring to async/await and modules, these modern JavaScript features will transform how you write code. We'll discuss each feature in detail with practical examples that you can apply in your projects.\n\nWhether you're a beginner or an experienced developer, understanding these modern JavaScript features will help you write better code and stay current with industry standards.",
+    "excerpt": "Explore the most important ES6+ features that will transform how you write JavaScript code.",
+    "tags": ["JavaScript", "ES6", "Programming"],
+    "readTime": "6 min read"
+  },
+  {
+    "id": 4,
+    "title": "Building Accessible Web Applications",
+    "author": "Revanth",
+    "date": "2026-02-10",
+    "category": "Web Development",
+    "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+    "content": "Web accessibility is not just a best practice—it's a necessity. Building accessible web applications ensures that everyone, including people with disabilities, can use and enjoy your websites. In this guide, we'll explore the principles of web accessibility and practical techniques for implementing accessible designs.\n\nWe'll cover important topics like semantic HTML, ARIA attributes, keyboard navigation, color contrast, and screen reader compatibility. These concepts are essential for creating inclusive web experiences.\n\nBy following accessibility best practices, you not only help users with disabilities but also improve your site's SEO and overall user experience. It's a win-win for everyone.",
+    "excerpt": "Learn how to build inclusive web applications that are accessible to everyone, including people with disabilities.",
+    "tags": ["Accessibility", "Web Development", "UX"],
+    "readTime": "8 min read"
+  },
+  {
+    "id": 5,
+    "title": "Introduction to React Hooks",
+    "author": "Revanth",
+    "date": "2026-02-08",
+    "category": "JavaScript",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
+    "content": "React Hooks revolutionized how we write React components. They allow you to use state and other React features without writing a class. In this comprehensive guide, we'll explore the built-in hooks and learn how to create custom hooks for reusable logic.\n\nWe'll cover useState, useEffect, useContext, useReducer, and other important hooks. Each hook will be explained with practical examples that demonstrate its use cases and best practices.\n\nUnderstanding React Hooks is essential for modern React development. By the end of this guide, you'll be confident in using hooks to build clean and efficient React applications.",
+    "excerpt": "Master React Hooks and learn how to write cleaner, more reusable React components.",
+    "tags": ["React", "JavaScript", "Hooks"],
+    "readTime": "9 min read"
+  },
+  {
+    "id": 6,
+    "title": "CSS Animations and Transitions Masterclass",
+    "author": "Revanth",
+    "date": "2026-02-05",
+    "category": "CSS",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+    "content": "Animations can bring your websites to life and create delightful user experiences. CSS provides powerful animation capabilities that can transform static designs into dynamic, engaging interfaces. In this masterclass, we'll explore everything from simple transitions to complex keyframe animations.\n\nLearn how to create smooth animations, optimize performance, and avoid common pitfalls. We'll discuss timing functions, animation properties, and best practices for creating performant animations.\n\nWith the techniques in this guide, you'll be able to create engaging micro-interactions, loading animations, and complex visual effects that will impress your users.",
+    "excerpt": "Learn to create stunning animations and transitions that enhance user experience and engagement.",
+    "tags": ["CSS", "Animations", "UI Design"],
+    "readTime": "6 min read"
+  },
+  {
+    "id": 7,
+    "title": "The Future of Web: Web3 and Beyond",
+    "author": "Revanth",
+    "date": "2026-02-03",
+    "category": "Web Development",
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
+    "content": "The web is constantly evolving, and new technologies are emerging that promise to reshape how we interact with the internet. From Web3 and blockchain to AI-powered experiences, the future of the web is exciting. In this article, we'll explore upcoming trends and technologies that will define the next era of web development.\n\nWe'll discuss decentralized applications, NFTs, the metaverse, and how AI is changing web experiences. Understanding these trends will help you prepare for the future of web development.\n\nWhile some of these technologies are still evolving, it's important to stay informed about the direction the web is heading. This knowledge will help you make better decisions about which technologies to adopt in your projects.",
+    "excerpt": "Explore the emerging technologies and trends that will shape the future of web development.",
+    "tags": ["Web3", "Blockchain", "Future Tech"],
+    "readTime": "5 min read"
+  },
+  {
+    "id": 8,
+    "title": "TypeScript for JavaScript Developers",
+    "author": "Revanth",
+    "date": "2026-02-01",
+    "category": "JavaScript",
+    "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80",
+    "content": "TypeScript has become an essential tool in modern web development. It adds static typing to JavaScript, helping developers catch errors early and write more maintainable code. In this guide, we'll explore TypeScript fundamentals and learn how to transition from JavaScript to TypeScript.\n\nWe'll cover type annotations, interfaces, generics, and other TypeScript features. You'll learn how to set up a TypeScript project and best practices for using TypeScript in real-world applications.\n\nWhether you're new to TypeScript or looking to deepen your understanding, this guide will help you leverage TypeScript's power to write better JavaScript code.",
+    "excerpt": "Learn TypeScript from scratch and discover how it can improve your JavaScript development experience.",
+    "tags": ["TypeScript", "JavaScript", "Programming"],
+    "readTime": "7 min read"
+  }
+]

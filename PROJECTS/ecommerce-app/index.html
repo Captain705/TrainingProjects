@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Modern E-Commerce</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shopping-bag"></i>
+                <span>ShopEase</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="nav-home" class="active">Home</a></li>
+                <li><a href="#" id="nav-products">Products</a></li>
+                <li><a href="#" id="nav-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+                <li id="nav-user"></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Auth Section -->
+        <section id="auth-section" class="auth-section">
+            <!-- Login Form -->
+            <div class="auth-container" id="login-container">
+                <div class="auth-box">
+                    <div class="auth-header">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in to continue shopping</p>
+                    </div>
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" placeholder="Enter your email" required>
+                            </div>
+                            <span class="error-message" id="login-email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" placeholder="Enter your password" required>
+                            </div>
+                            <span class="error-message" id="login-password-error"></span>
+                        </div>
+                        <div class="form-group remember-me">
+                            <label>
+                                <input type="checkbox" id="remember-me">
+                                <span>Remember me</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Sign In</span>
+                            <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                        <div class="auth-switch">
+                            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-container hidden" id="register-container">
+                <div class="auth-box">
+                    <div class="auth-header">
+                        <h2>Create Account</h2>
+                        <p>Join us and start shopping</p>
+                    </div>
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="register-username">Username</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="register-username" placeholder="Enter your username" required>
+                            </div>
+                            <span class="error-message" id="register-username-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="register-email" placeholder="Enter your email" required>
+                            </div>
+                            <span class="error-message" id="register-email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="register-password" placeholder="Create a password" required>
+                            </div>
+                            <span class="error-message" id="register-password-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-confirm-password">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="register-confirm-password" placeholder="Confirm your password" required>
+                            </div>
+                            <span class="error-message" id="register-confirm-password-error"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Create Account</span>
+                            <i class="fas fa-user-plus"></i>
+                        </button>
+                        <div class="auth-switch">
+                            <p>Already have an account? <a href="#" id="show-login">Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products-section" class="products-section hidden">
+            <div class="section-header">
+                <h1>Our Products</h1>
+                <p>Discover amazing products at great prices</p>
+            </div>
+            
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search products...">
+                </div>
+                <div class="filter-group">
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="home">Home & Living</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="price-filter" class="filter-select">
+                        <option value="">All Prices</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200+">$200+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="sort-filter" class="filter-select">
+                        <option value="default">Sort by: Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+
+            <!-- No Products Found -->
+            <div class="no-products hidden" id="no-products">
+                <i class="fas fa-search"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your filters or search terms</p>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart-section" class="cart-section hidden">
+            <div class="section-header">
+                <h1>Shopping Cart</h1>
+                <p>Review your items before checkout</p>
+            </div>
+            
+            <div class="cart-container">
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                
+                <div class="cart-summary" id="cart-summary">
+                    <div class="summary-header">
+                        <h3>Order Summary</h3>
+                    </div>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (10%)</span>
+                            <span id="cart-tax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-checkout" id="checkout-btn">
+                        <span>Proceed to Checkout</span>
+                        <i class="fas fa-credit-card"></i>
+                    </button>
+                    <button class="btn btn-secondary" id="continue-shopping-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Continue Shopping</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Empty Cart -->
+            <div class="empty-cart hidden" id="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Your cart is empty</h3>
+                <p>Start shopping to add items to your cart</p>
+                <button class="btn btn-primary" id="start-shopping-btn">
+                    <span>Start Shopping</span>
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Home Section -->
+        <section id="home-section" class="home-section">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to <span>ShopEase</span></h1>
+                    <p>Discover amazing products at unbeatable prices</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="hero-shop-now">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary" id="hero-learn-more">
+                            <span>Learn More</span>
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-circle"></div>
+                    <div class="hero-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $50</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure checkout</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated support team</p>
+                </div>
+            </div>
+
+            <div class="featured-products">
+                <h2>Featured Products</h2>
+                <div class="featured-grid" id="featured-grid">
+                    <!-- Featured products will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

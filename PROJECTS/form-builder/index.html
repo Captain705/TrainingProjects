@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Builder - Modern Drag & Drop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1 class="app-title">
+                    <span class="logo-icon">📋</span>
+                    Form Builder
+                </h1>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-secondary" id="undoBtn" title="Undo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 10h10a5 5 0 0 1 5 5v2M3 10l4-4M3 10l4 4"/>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" id="redoBtn" title="Redo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10H11a5 5 0 0 0-5 5v2M21 10l-4-4M21 10l-4 4"/>
+                    </svg>
+                </button>
+                <div class="divider"></div>
+                <button class="btn btn-secondary" id="importBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    Import
+                </button>
+                <button class="btn btn-secondary" id="clearBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    </svg>
+                    Clear
+                </button>
+                <button class="btn btn-primary" id="saveBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
+                    Save
+                </button>
+                <button class="btn btn-secondary" id="exportBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Export
+                </button>
+                <button class="btn btn-icon theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Panel - Field Toolbox -->
+            <aside class="toolbox-panel">
+                <div class="panel-header">
+                    <h2>Field Toolbox</h2>
+                    <span class="field-count">10 fields</span>
+                </div>
+                <div class="field-list">
+                    <div class="field-item" draggable="true" data-field-type="text">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+                            </svg>
+                        </div>
+                        <span>Text Input</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="textarea">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M7 7h10M7 12h10M7 17h6"/>
+                            </svg>
+                        </div>
+                        <span>Textarea</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="number">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 17l6-6-6-6M12 19h8"/>
+                            </svg>
+                        </div>
+                        <span>Number</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="email">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <span>Email</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="password">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <span>Password</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="select">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                        <span>Dropdown</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="checkbox">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <span>Checkbox</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="radio">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span>Radio Button</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="date">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <span>Date Picker</span>
+                    </div>
+                    <div class="field-item" draggable="true" data-field-type="button">
+                        <div class="field-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="8" width="18" height="8" rx="2"/>
+                                <path d="M10 12h4"/>
+                            </svg>
+                        </div>
+                        <span>Button</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Panel - Form Canvas -->
+            <section class="canvas-panel">
+                <div class="panel-header">
+                    <h2>Form Canvas</h2>
+                    <div class="canvas-actions">
+                        <span class="field-count" id="formFieldCount">0 fields</span>
+                    </div>
+                </div>
+                <div class="canvas-wrapper">
+                    <div class="form-canvas" id="formCanvas">
+                        <div class="empty-state" id="emptyState">
+                            <div class="empty-icon">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="12" y1="18" x2="12" y2="12"/>
+                                    <line x y1="151="9"" x2="15" y2="15"/>
+                                </svg>
+                            </div>
+                            <h3>Start Building Your Form</h3>
+                            <p>Drag fields from the toolbox and drop them here</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Field Editor Modal -->
+        <div class="modal-overlay" id="fieldEditorModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Edit Field</h3>
+                    <button class="modal-close" id="closeModal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="fieldLabel">Field Label</label>
+                        <input type="text" id="fieldLabel" class="form-input" placeholder="Enter field label">
+                    </div>
+                    <div class="form-group">
+                        <label for="fieldPlaceholder">Placeholder Text</label>
+                        <input type="text" id="fieldPlaceholder" class="form-input" placeholder="Enter placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label for="fieldDefault">Default Value</label>
+                        <input type="text" id="fieldDefault" class="form-input" placeholder="Enter default value">
+                    </div>
+                    <div class="form-group toggle-group">
+                        <label for="fieldRequired">
+                            <span>Required Field</span>
+                            <span class="required-indicator">*</span>
+                        </label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="fieldRequired">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="form-group options-group" id="optionsGroup" style="display: none;">
+                        <label>Field Options</label>
+                        <div class="options-list" id="optionsList">
+                            <!-- Options will be added dynamically -->
+                        </div>
+                        <button class="btn btn-secondary btn-sm" id="addOptionBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Add Option
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="cancelEdit">Cancel</button>
+                    <button class="btn btn-primary" id="saveField">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Modal -->
+        <div class="modal-overlay" id="exportModal">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h3>Export Form</h3>
+                    <button class="modal-close" id="closeExportModal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="export-tabs">
+                        <button class="export-tab active" data-tab="json">JSON</button>
+                        <button class="export-tab" data-tab="html">HTML</button>
+                    </div>
+                    <div class="export-content">
+                        <pre class="code-preview" id="exportPreview"></pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="copyExportBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                        Copy to Clipboard
+                    </button>
+                    <button class="btn btn-primary" id="downloadExportBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import Modal -->
+        <div class="modal-overlay" id="importModal">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h3>Import Form</h3>
+                    <button class="modal-close" id="closeImportModal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Paste JSON</label>
+                        <textarea id="importJson" class="form-textarea" placeholder="Paste your JSON here..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="cancelImport">Cancel</button>
+                    <button class="btn btn-primary" id="importFormBtn">Import</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

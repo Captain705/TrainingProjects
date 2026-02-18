@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker - Track Your Daily Habits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>HabitTrack</span>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="export-btn" id="exportBtn" aria-label="Export data">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar - Habits List -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h2><i class="fas fa-list"></i> My Habits</h2>
+                    
+                    <!-- Add Habit Form -->
+                    <div class="add-habit">
+                        <input type="text" id="habitInput" placeholder="Add new habit..." maxlength="50">
+                        <button id="addHabitBtn" aria-label="Add habit">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Habits List -->
+                    <ul class="habits-list" id="habitsList">
+                        <!-- Habits will be added here dynamically -->
+                    </ul>
+
+                    <!-- Empty State -->
+                    <div class="empty-habits" id="emptyHabits">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>No habits yet. Add one to start tracking!</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalDays">0</span>
+                            <span class="stat-label">Total Days</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon fire">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="currentStreak">0</span>
+                            <span class="stat-label">Current Streak</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon trophy">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="longestStreak">0</span>
+                            <span class="stat-label">Longest Streak</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon percent">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="completionRate">0%</span>
+                            <span class="stat-label">Completion Rate</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Calendar Heatmap Section -->
+                <section class="heatmap-section">
+                    <div class="heatmap-card">
+                        <div class="heatmap-header">
+                            <h2 id="heatmapTitle">Select a habit to view progress</h2>
+                            <div class="heatmap-legend">
+                                <span>Less</span>
+                                <div class="legend-colors">
+                                    <div class="legend-color level-0"></div>
+                                    <div class="legend-color level-1"></div>
+                                    <div class="legend-color level-2"></div>
+                                    <div class="legend-color level-3"></div>
+                                    <div class="legend-color level-4"></div>
+                                </div>
+                                <span>More</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Month Labels -->
+                        <div class="month-labels" id="monthLabels">
+                            <!-- Months will be added dynamically -->
+                        </div>
+
+                        <!-- Heatmap Grid -->
+                        <div class="heatmap-grid" id="heatmapGrid">
+                            <!-- Days will be added dynamically -->
+                        </div>
+
+                        <!-- Day Labels -->
+                        <div class="day-labels">
+                            <span>Mon</span>
+                            <span>Wed</span>
+                            <span>Fri</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- No Habit Selected Message -->
+                <div class="no-habit-selected" id="noHabitMessage">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h3>Select or Add a Habit</h3>
+                    <p>Choose a habit from the sidebar or add a new one to start tracking your daily progress.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Build better habits, one day at a time. 💪</p>
+        </footer>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

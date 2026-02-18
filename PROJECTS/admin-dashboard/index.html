@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="ph-fill ph-hexagon"></i>
+                    <span>AdminHub</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="ph-bold ph-list"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-page="dashboard">
+                        <a href="#">
+                            <i class="ph-bold ph-squares-four"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="analytics">
+                        <a href="#">
+                            <i class="ph-bold ph-chart-line-up"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="users">
+                        <a href="#">
+                            <i class="ph-bold ph-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="reports">
+                        <a href="#">
+                            <i class="ph-bold ph-file-text"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="settings">
+                        <a href="#">
+                            <i class="ph-bold ph-gear"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" alt="User Avatar" class="user-avatar">
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="ph-bold ph-list"></i>
+                    </button>
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+                <div class="navbar-center">
+                    <div class="search-box">
+                        <i class="ph-bold ph-magnifying-glass"></i>
+                        <input type="text" placeholder="Search..." id="searchInput">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <button class="nav-icon-btn" id="themeToggle" title="Toggle Theme">
+                        <i class="ph-bold ph-moon" id="themeIcon"></i>
+                    </button>
+                    <button class="nav-icon-btn notification-btn" id="notificationBtn">
+                        <i class="ph-bold ph-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="dropdown-header">
+                            <h4>Notifications</h4>
+                            <button class="mark-read">Mark all read</button>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="ph-bold ph-user-plus"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>New user registered</p>
+                                    <span class="notification-time">2 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <div class="notification-icon">
+                                    <i class="ph-bold ph-shopping-cart"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>New order placed</p>
+                                    <span class="notification-time">5 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-icon">
+                                    <i class="ph-bold ph-check-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Payment completed</p>
+                                    <span class="notification-time">1 hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <section class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon users">
+                                <i class="ph-bold ph-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-title">Total Users</span>
+                                <div class="stat-value-row">
+                                    <span class="stat-value" id="totalUsers">12,345</span>
+                                    <span class="stat-trend positive">
+                                        <i class="ph-bold ph-trend-up"></i>
+                                        12.5%
+                                    </span>
+                                </div>
+                                <span class="stat-period">vs last month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon sales">
+                                <i class="ph-bold ph-shopping-cart"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-title">Total Sales</span>
+                                <div class="stat-value-row">
+                                    <span class="stat-value" id="totalSales">8,734</span>
+                                    <span class="stat-trend positive">
+                                        <i class="ph-bold ph-trend-up"></i>
+                                        8.2%
+                                    </span>
+                                </div>
+                                <span class="stat-period">vs last month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon revenue">
+                                <i class="ph-bold ph-currency-dollar"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-title">Revenue</span>
+                                <div class="stat-value-row">
+                                    <span class="stat-value" id="totalRevenue">$48,265</span>
+                                    <span class="stat-trend positive">
+                                        <i class="ph-bold ph-trend-up"></i>
+                                        15.3%
+                                    </span>
+                                </div>
+                                <span class="stat-period">vs last month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orders">
+                                <i class="ph-bold ph-package"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-title">Orders</span>
+                                <div class="stat-value-row">
+                                    <span class="stat-value" id="totalOrders">2,156</span>
+                                    <span class="stat-trend negative">
+                                        <i class="ph-bold ph-trend-down"></i>
+                                        3.1%
+                                    </span>
+                                </div>
+                                <span class="stat-period">vs last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <div class="charts-grid">
+                        <div class="chart-card large">
+                            <div class="chart-header">
+                                <h3>Sales Overview</h3>
+                                <div class="chart-actions">
+                                    <select id="salesTimeRange">
+                                        <option value="week">This Week</option>
+                                        <option value="month" selected>This Month</option>
+                                        <option value="year">This Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Revenue by Month</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>User Distribution</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="userDistributionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Table Section -->
+                <section class="table-section">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3>Recent Users</h3>
+                            <div class="table-actions">
+                                <div class="table-search">
+                                    <i class="ph-bold ph-funnel"></i>
+                                    <input type="text" placeholder="Filter users..." id="tableSearch">
+                                </div>
+                                <button class="export-btn" id="exportBtn">
+                                    <i class="ph-bold ph-download"></i>
+                                    Export CSV
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Date Joined</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-footer">
+                            <div class="pagination-info">
+                                Showing <span id="showingStart">1</span> to <span id="showingEnd">10</span> of <span id="totalEntries">50</span> entries
+                            </div>
+                            <div class="pagination" id="pagination">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
